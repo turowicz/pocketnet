@@ -1,0 +1,1 @@
+pkill -f transmission-cli
