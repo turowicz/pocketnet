@@ -1,9 +1,11 @@
 FROM ubuntu:focal
+ARG PASSWORD
 
 EXPOSE 51413
 EXPOSE 58080
 
 ENV DEBIAN_FRONTEND=noninteractive
+
 
 WORKDIR /root
 
@@ -17,6 +19,9 @@ RUN apt-get update && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
+# Temporary data folder (to be mounted externally)
+RUN mkdir /data
+
 # Install Pocket
 ADD https://github.com/pocketnetteam/pocketnet.core/releases/download/v0.18.18/pocketnetcore_0.18.18_ubuntu_20.04_x64_setup.deb pocket.deb
 RUN dpkg -i pocket.deb && apt install -f && rm pocket.deb
@@ -24,7 +29,7 @@ RUN dpkg -i pocket.deb && apt install -f && rm pocket.deb
 # Add scripts
 ADD src/entrypoint.sh /entrypoint.sh
 ADD src/kill-torrents.sh /kill-torrents.sh
-ADD src/pocketcoin.conf /root/.pocketcoin/pocketcoin.conf
+ADD src/pocketcoin.conf /root/pocketcoin.conf.default
 
 # Set scripts attributes
 RUN chmod +x /entrypoint.sh

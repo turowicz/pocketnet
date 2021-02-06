@@ -2,7 +2,10 @@
 
 set +e
 
-if [ ! -f "/root/.pocketcoin/wallet.dat" ]; then
+#rpcpassword=$PASSWORD
+
+
+if [ ! -f "/data/wallet.dat" ]; then
     mkdir /root/Downloads
     wget -O /root/Downloads/ubuntu.torrent https://releases.ubuntu.com/20.04/ubuntu-20.04.2-live-server-amd64.iso.torrent
     transmission-cli -ep -w /root/Downloads -f /kill-torrents.sh /root/Downloads/ubuntu.torrent
