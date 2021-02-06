@@ -4,6 +4,7 @@ set +e
 
 if [ ! -f "/data/wallet.dat" ]; then
     cp /root/pocketcoin.conf.default /data/pocketcoin.conf
+    echo -e "\n" >> /data/pocketcoin.conf
     echo "rpcpassword=$PASSWORD" >> /data/pocketcoin.conf
 
     mkdir /root/Downloads
