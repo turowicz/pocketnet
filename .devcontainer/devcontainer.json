@@ -1,0 +1,17 @@
+{
+	"name": "pocketnet",
+	"build": {
+		"dockerfile": "../Dockerfile",
+		"context": "../"
+	},
+	"appPort": [
+		"58080:58080",
+		"58080:58080/udp",
+		"51413:51413",
+		"51413:51413/udp",
+	],
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	"extensions": [],
+}
