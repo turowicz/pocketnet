@@ -1,11 +1,11 @@
 FROM ubuntu:focal
-ARG PASSWORD
+ARG password
 
 EXPOSE 51413
 EXPOSE 58080
 
+ENV PASSWORD=$password
 ENV DEBIAN_FRONTEND=noninteractive
-
 
 WORKDIR /root
 
