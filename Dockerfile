@@ -23,7 +23,7 @@ RUN dpkg -i pocket.deb && apt install -f && rm pocket.deb
 
 # Add scripts
 ADD src/entrypoint.sh /entrypoint.sh
-ADD src/kill-torrents.sh /entrypoint.sh
+ADD src/kill-torrents.sh /kill-torrents.sh
 ADD src/pocketcoin.conf /root/.pocketcoin/pocketcoin.conf
 
 # Set scripts attributes
