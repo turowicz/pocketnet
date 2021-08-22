@@ -1,3 +1,5 @@
+The following dockerfile repository has been created for version 0.18.18 with information https://pocketnet.app/help?page=node
+
 Run:
 ```
 sudo mkdir /pocket
