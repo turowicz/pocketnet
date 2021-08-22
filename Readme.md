@@ -7,5 +7,6 @@ sudo docker logs pocket -f
 
 Cleanup:
 ```
-sudo docker rm pocket -f && sudo rm -rf /data/*
+sudo docker rm pocket -f
+sudo rm -rf /data/*
 ```
