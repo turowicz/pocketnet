@@ -5,6 +5,7 @@ sudo docker run -dit -p 58080:58080 -p 51413:51413 -v /data:/data --name pocket 
 sudo docker logs pocket -f
 ```
 
+Cleanup:
 ```
 sudo docker rm pocket -f && sudo rm -rf /data/*
 ```
